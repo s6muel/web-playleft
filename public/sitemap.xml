@@ -2,20 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://playleft.com/</loc>
     <lastmod>2025-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/the-first-one/</loc>
+    <loc>https://playleft.com/posts/the-first-one/</loc>
     <lastmod>2025-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/contact/</loc>
+    <loc>https://playleft.com/about/</loc>
     <lastmod>2024-12-16T11:30:04+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://playleft.com/contact/</loc>
     <lastmod>2024-12-16T11:30:04+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://playleft.com/posts/</loc>
+    <lastmod>2024-12-16T11:30:04+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://playleft.com/categories/</loc>
+  </url><url>
+    <loc>https://playleft.com/tags/</loc>
   </url>
 </urlset>
