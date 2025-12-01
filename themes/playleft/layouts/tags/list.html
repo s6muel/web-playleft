@@ -11,33 +11,40 @@
   {{ $paginator := .Paginate $p -}}
   <section class="post-list" aria-label="Posts tagged {{ .Title }}">
     {{- range $paginator.Pages }}
-      <article class="card" itemscope itemtype="https://schema.org/BlogPosting">
+    <article class="card" itemscope itemtype="https://schema.org/Article">
+	  <header>
         <h2 itemprop="headline">
           <a href="{{ .RelPermalink }}" itemprop="url">
             {{ .Title }}
           </a>
         </h2>
         {{ with .Date -}}
-	<span class="post-date">
-          Published: <time class="post-date"
+		<span class="post-date">
+		  Published:
+		  <time class="post-date"
                 datetime="{{ .Format "2006-01-02" }}"
                 itemprop="datePublished">
             {{ .Format "2006-01-02" }}
           </time>
-	</span>
+		</span>
         {{- end -}}
         {{ with .Lastmod }}
-	<span class="post-date">
-          Revised: <time datetime="{{ .Format "2006-01-02" }}"
+		<span class="post-date">
+		  Revised:
+		  <time datetime="{{ .Format "2006-01-02" }}"
                 itemprop="dateModified">{{ .Format "2006-01-02" }}
           </time>
-	</span>
-        {{- end -}}
-        {{ with .Summary }}
-          <span class="lead" itemprop="description">{{ . }}</span>
-        {{ end -}}
-      </article>
+		</span>
+		{{- end -}}
+		{{ with .Summary }}
+		<span class="lead" itemprop="description">
+		  {{ . }}
+		</span>
+		{{ end -}}
+		<a href="{{ .RelPermalink }}">Read More >></a>
+	  </header>
+    </article>
     {{ end -}}
   </section>
-  {{- template "_internal/pagination.html" . }}
+  {{ template "_internal/pagination.html" . -}}
 {{ end -}}
