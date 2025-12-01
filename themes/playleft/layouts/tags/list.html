@@ -1,0 +1,43 @@
+{{ define "main" }}
+    {{- with .Title }}
+      <h1>Posts tagged "{{ . }}"</h1>
+    {{- end -}}
+  {{ $p := .Pages }}
+  {{ if .IsHome }}
+    {{ $p = where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{ else if eq .Kind "taxonomy" }}
+    {{ $p = $p.ByTitle }}
+  {{- end -}}
+  {{ $paginator := .Paginate $p -}}
+  <section class="post-list" aria-label="Posts tagged {{ .Title }}">
+    {{- range $paginator.Pages }}
+      <article class="card" itemscope itemtype="https://schema.org/BlogPosting">
+        <h2 itemprop="headline">
+          <a href="{{ .RelPermalink }}" itemprop="url">
+            {{ .Title }}
+          </a>
+        </h2>
+        {{ with .Date -}}
+	<span class="post-date">
+          Published: <time class="post-date"
+                datetime="{{ .Format "2006-01-02" }}"
+                itemprop="datePublished">
+            {{ .Format "2006-01-02" }}
+          </time>
+	</span>
+        {{- end -}}
+        {{ with .Lastmod }}
+	<span class="post-date">
+          Revised: <time datetime="{{ .Format "2006-01-02" }}"
+                itemprop="dateModified">{{ .Format "2006-01-02" }}
+          </time>
+	</span>
+        {{- end -}}
+        {{ with .Summary }}
+          <span class="lead" itemprop="description">{{ . }}</span>
+        {{ end -}}
+      </article>
+    {{ end -}}
+  </section>
+  {{- template "_internal/pagination.html" . }}
+{{ end -}}

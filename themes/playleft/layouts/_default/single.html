@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="page-article"
+         itemscope
+         itemtype="https://schema.org/WebPage">
+  <header class="page-header">
+    <h1 itemprop="headline">{{ .Title }}</h1>
+    {{ with .Params.description }}
+      <p class="lead" itemprop="description"><i>{{ . }}</i></p>
+    {{ end -}}
+  </header>
+  <section class="page-content" itemprop="mainContentOfPage">
+    {{ .Content -}}
+  </section>
+</article>
+{{ end -}}

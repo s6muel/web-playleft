@@ -1,0 +1,164 @@
+@media (prefers-color-scheme: dark){
+       body {
+       	    background:#0d0e1c;
+	    color: #ffffff;
+       }
+       a {
+       	 color:#00bcff;
+	 }
+       pre {
+        background: #303a6f;
+	 }
+}
+@media (prefers-color-scheme: light){
+	   body {
+	   		background:#fbf7f0;
+			color: #000;
+			}
+       a {
+			color: #0031a9;
+			}
+       pre {
+			background: #f1d5d0;
+			}
+}	
+body{
+	margin:1em auto;
+	max-width:37em;
+	padding:0 .62em 3.24em;
+	font:1.2em/1.62 sans-serif;
+}
+
+h1,h2,h3 {
+	line-height:1.2;
+}
+
+@media print{
+	   body{
+			max-width:none
+			}
+}
+
+.main-nav {
+  font-size: 0.9em;
+  margin-bottom: 2.67em;
+}
+
+nav.main-nav {
+  border-bottom: 1.67px solid;
+  border-color: color-mix(in srgb, currentColor 30%, transparent);
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav li {
+  margin: 0;
+  padding: 0;
+}
+
+.post-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.post-list li {
+  display: flex;
+  padding-bottom: 0.67rem;
+  align-items: baseline;
+}
+
+.latest-post-date {
+  width: 9ch;
+  margin-right: 1em;
+}
+
+.pagination {
+  display: flex;
+  padding-inline-start: 0px;
+  margin-top: 2.67rem;
+  justify-content: center;
+}
+
+.pagination ul {
+  list-style: none;
+  width: 100%;
+}
+
+.pagination li {
+  display: flex;
+}
+
+.pagination a,
+.pagination li {
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+}
+
+.pagination .active {
+  font-weight: bold;
+}
+
+.footnote-ref {
+  font-weight: bold;
+  margin-left: 0.2em;
+  margin-right: 0.1em;
+}
+
+.footnotes {
+  overflow-wrap: break-word;
+}
+
+.page-content .footnote-backref {
+  margin-left: 0.25em;
+  padding: 5px 5px 5px 5px;
+}
+
+blockquote {
+  font-style: italic;
+  opacity: 0.67;
+  border-left: 2px dotted;
+  padding-left: 1em;
+  margin-inline-start: 0;
+}
+
+pre {
+  line-height: 1.6em;
+  padding: 0.75em 1em;
+  margin: 1em 0;
+  border-radius: 3px;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+p code {
+  font-weight: bold;
+}
+
+footer {
+  opacity: 0.67;
+  margin-top: 5.33rem;
+}
+
+.post-metadata {
+  margin-bottom: 1.5rem;
+  color: color-mix(in srgb, currentColor 60%, transparent);
+  font-size: 0.9em;
+}
+
+ul.post-tags {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .37em;
+}
+
+ul.post-tags li {
+  display: inline-flex;
+}

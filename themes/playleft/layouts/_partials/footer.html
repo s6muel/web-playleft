@@ -1,0 +1,10 @@
+
+<footer>
+    {{- $now := now.Format "2006" -}}
+    {{- with site.Params.startdate -}}
+      {{- $start := dateFormat "2006" . -}}
+      {{- printf "Copyright (c) %s %s." (cond (eq $start $now) $now (printf "%s–%s" $start $now)) site.Params.author -}}
+    {{- else -}}
+      {{- printf "Copyright (c) %s %s." $now site.Params.author -}}
+    {{- end -}}
+</footer>

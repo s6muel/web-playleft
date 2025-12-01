@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="page-article"
+         itemscope
+         itemtype="https://schema.org/WebPage">
+  <header class="page-header">
+    <h1 itemprop="headline">{{ site.Title }}</h1>
+    {{ with .Params.description -}}
+      <p class="lead" itemprop="description"><i>{{ . }}</i></p>
+    {{- end }}
+  </header>
+  <section class="page-content" itemprop="mainContentOfPage">
+    {{- .Content -}}
+    <h2>Latest Posts</h2>
+    <p class="lead" itemprop="description"><i>My recent writings.</i></p>    
+    <ul class="post-list">
+      {{- range first 10 (where .Site.RegularPages "Type" "posts") }}
+      <li>
+	<span class="latest-post-date">{{ .Date.Format "2006-01-02" }}</span>
+	<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{ end -}}
+    </ul>
+  </section>
+</article>
+{{ end }}

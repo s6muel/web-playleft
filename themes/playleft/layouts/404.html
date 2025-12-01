@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main aria-labelledby="page-title" role="alert">
+  <h1 id="page-title">404 – Page Not Found</h1>
+
+  <p>Sam's server was unable to find the page you were looking for. It
+  may have been moved or  piped to <code>/dev/null</code>. It wouldn't be the
+  first time.</p>
+
+  <p>I bid you farewell on your journey <a href="{{ "/" | relURL }}">back to the
+      homepage</a>.</p>
+  <p>Your humble  servant,</p>
+  <p><code>nginx</code></p>
+</main>
+{{ end }}

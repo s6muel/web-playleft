@@ -1,0 +1,12 @@
+demosite="https://playleft.com"
+description = "Fully functional with minimum css, no javascript."
+features    = []
+homepage    = "https://github.com/s6muel/web-playleft"
+license     = "MIT"
+licenselink = "https://github.com/s6muel/web-playleft/blob/master/LICENSE"
+name        = "playleft"
+tags        = ["blog", "clean", "minimal", "personal", "simple"]
+
+[author]
+homepage = "https://playleft.com/"
+name     = "Sam Sinclair"

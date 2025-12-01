@@ -1,0 +1,61 @@
+{{ define "main" }}
+<article
+  itemscope
+  itemtype="https://schema.org/Article"
+  class="post-article">
+  <!-- Header -->
+  <header class="post-header">
+    <h1 itemprop="headline">{{ .Title }}</h1>
+    {{ with .Params.description }}
+    <p class="lead" itemprop="description"><em>{{ . -}}</em></p>
+    {{ end -}}
+    {{- with .Date }}
+    <div class="post-metadata">
+      Published: <time itemprop="datePublished" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ dateFormat "2006-01-02" . }}</time>
+    {{- end -}}
+    {{ with .Lastmod }}
+      Revised:
+      <time itemprop="dateModified" datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ dateFormat "2006-01-02" . }}</time>
+    {{- end -}}    
+      {{ with .GetTerms "tags" }}
+      <ul class="post-tags" aria-label="Tags">
+      <li class="tag-label">Tags:</li>
+      {{- range $i, $t := . -}}
+      {{- if $i }} {{ end -}}
+      <li><a itemprop="keywords" href="{{ $t.RelPermalink }}">#{{ $t.Page.Title }}</a></li>
+      {{- end -}}
+    </ul>
+    {{- end -}}
+    </div>
+  </header>
+  <!-- Main Content -->
+  <section class="post-content" itemprop="articleBody">
+    {{- .Content }}
+  </section>
+  <!-- Related Posts -->
+  {{- $related := site.RegularPages.Related . | first 5 }}
+  {{- with $related }}
+  <section class="post-related">
+    <h2>Related Posts</h2>
+    <ul>
+      {{ range . -}}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end -}}
+    </ul>
+  </section>
+  {{ end }}
+</article>
+<!-- Previous / Next Navigation -->
+{{ if or .PrevInSection .NextInSection }}
+<nav class="post-nav"
+     aria-label="Post navigation"
+     style="display:flex; justify-content:space-between; width:100%; margin-top:2.33rem;">
+  {{ with .PrevInSection }}
+    <a class="post-nav-prev" href="{{ .RelPermalink }}">&lt;&lt; {{ .Title }}</a>
+  {{- end -}}
+  {{ with .NextInSection }}
+    <a class="post-nav-next" href="{{ .RelPermalink }}">{{ .Title }} &gt;&gt;</a>
+  {{ end -}}
+</nav>
+{{ end -}}
+{{ end -}}
