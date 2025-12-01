@@ -89,8 +89,7 @@ tag      = "tags"
 	backlinkHTML = "<<"
 
 [author]
-  name = "Sam Sinclair"
-  email = "sam@example.com"
+  name = "Sam Smith"
 
 [Params]
 mainSections = "post"
