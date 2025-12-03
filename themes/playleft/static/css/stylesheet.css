@@ -9,6 +9,9 @@
        pre {
         background: #303a6f;
 	 }
+	 h1 {
+	 text-shadow: 3px 3px 2px #2b3045;
+	 }
 }
 @media (prefers-color-scheme: light){
 	   body {
@@ -21,7 +24,14 @@
        pre {
 			background: #f1d5d0;
 			}
-}	
+		h1 {
+			text-shadow: 3px 3px 2px #efe9dd;
+			}
+}
+html {
+scroll-behavior: smooth;
+}
+
 body{
 	margin:1em auto;
 	max-width:37em;
@@ -37,6 +47,10 @@ h1,h2,h3 {
 	   body{
 			max-width:none
 			}
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .main-nav {
@@ -78,16 +92,19 @@ nav.main-nav {
   margin-right: 1em;
 }
 
+article.card {
+margin-top: 3.33em;
+}
+
 .pagination {
   display: flex;
-  padding-inline-start: 0px;
-  margin-top: 2.67rem;
   justify-content: center;
 }
 
 .pagination ul {
   list-style: none;
   width: 100%;
+  padding-inline-start: 0px;
 }
 
 .pagination li {
@@ -96,7 +113,6 @@ nav.main-nav {
 
 .pagination a,
 .pagination li {
-  text-decoration: none;
   padding: 0.4rem 0.8rem;
 }
 
@@ -141,14 +157,30 @@ p code, ul code {
 }
 
 footer {
-  opacity: 0.67;
-  margin-top: 5.33rem;
+  margin-top: 2.67em;
+}
+
+footer p {
+  line-height: 1em;
+  /* opacity: 0.67; */
+  color: color-mix(in srgb, currentColor 60%, transparent);
 }
 
 .post-metadata {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.67rem;
   color: color-mix(in srgb, currentColor 60%, transparent);
-  font-size: 0.9em;
+}
+
+.post-nav {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+ul.post-nav {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding-inline-start: 0;
 }
 
 ul.post-tags {
