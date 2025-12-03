@@ -5,7 +5,7 @@ description = "Get in touch with me."
 layout = "single"
 +++
 
-Email is the best way to get in touch. If you'd something more personal, feel free to arrange a time with me using Jitsi or a similar service. I'm always happy to have a yarn!
+Email is the best way to get in touch. If you prefer something more personal, feel free to arrange a time with me using Jitsi or a similar service. I'm always happy to have a yarn!
 
 - **Email ::** sam [at] `playleft.com`
 
