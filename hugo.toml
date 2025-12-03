@@ -43,12 +43,6 @@ pagerSize = 6
 	name 	   = "Contact"
 	url	   = "/contact/"
 	weight	   = 100
-	
-	[[menu.main]]
-	identifier = "gleemacs"
-	name 	   = "gleemacs"
-	url	   = "/gleemacs/"
-	weight	   = 50
 
 [taxonomies]
 category = "categories"
