@@ -84,12 +84,17 @@ nav.main-nav {
 .post-list li {
   display: flex;
   padding-bottom: 0.67rem;
-  align-items: baseline;
 }
 
 .latest-post-date {
-  width: 9ch;
-  margin-right: 1em;
+  flex: 0 0 auto;
+  width: 10ch;
+  white-space: nowrap;
+}
+
+.post-list li a {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 article.card {
