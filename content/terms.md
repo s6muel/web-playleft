@@ -7,7 +7,7 @@ description: "Terms and conditions, and privacy policy."
 
 ## Terms and Conditions
 
-Do good, be good, God bless, and Go Bills.
+Do good, be good, God bless, and Go Bills!
 
 ## Privacy
 
