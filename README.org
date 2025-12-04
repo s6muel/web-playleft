@@ -1,1 +1,32 @@
-# Playleft.com
+* README
+This is the code and content for my personal website.
+
+From a design standpoint I focused heavily on readability and accessibility, day
+and night theme users' eyes should be happy. Performance is also a
+consideration, and I'm heavily inspired by sites like
+[[https://bestmotherfucking.website/]] and the [[https://512kb.club/]] from that point
+of view.
+
++ No custom fonts, I assume your system's designers are far more skilled than me.
++ No JavaScript, I have no need for it right now.
+* Usage
+Simply run =hugo= from the root dir, and serve =/public= on a web server.
+* Cheers / Credits
++ Custom theme :: built on top of the [[https://github.com/J-Siu/hugo-theme-sk2][SK2 Skeleton Theme]] by John Siu.
++ Colours :: taken from [[https://protesilaos.com/emacs/modus-themes-colors][Modus {Operandi,Vivendi} Tinted]] by Protesilaos Stavrou for
+  readability.
++ Previous theme :: was [[https://github.com/imgios/not-much][=not-much= theme]] by Giosuè Sulipano. Nothing against it,
+  just wanted my own :)
+* LICENSE
++ Original content (LICENSE.CC-BY-SA-4.0) :: All original content, prose, posts, images,
+  and other non-code related works are published under the [[https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt][Creative Commons
+  Attribution-ShareAlike 4.0 International]].
++ Original code (LICENSE.GPL-3.0) :: Any original code such as scripts,
+  utilities, examples, other program files, and their associated documentation,
+  is published under the [[https://www.gnu.org/licenses/gpl-3.0.txt][GNU General Public License v3.0]].
++ Theme code (LICENSE.sk2) :: This website is built with Hugo on top of the [[https://github.com/J-Siu/hugo-theme-sk2][SK2
+  skeleton theme by John Siu]] which is published under the [[https://raw.githubusercontent.com/J-Siu/hugo-theme-sk2/refs/heads/master/LICENSE][MIT License]].
+
+  Any theme related code such as CSS, partials, layout logic, etc., that
+  I've written or modified is published under the [[https://www.gnu.org/licenses/gpl-3.0.html][GNU General Public License
+  v3.0]].
