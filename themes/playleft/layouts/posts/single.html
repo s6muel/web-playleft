@@ -29,6 +29,10 @@
     <p class="lead" itemprop="description"><em>{{ . -}}</em></p>
     {{- end -}}
   </header>
+  {{ if .Params.toc }}
+    <p class="toc-title" itemprop="tableOfContents"><strong>Table of Contents</strong></p>
+    {{ .TableOfContents }}
+  {{ end }}
   <section class="post-content" itemprop="articleBody">
     {{ .Content }}
   </section>

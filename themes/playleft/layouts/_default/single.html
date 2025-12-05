@@ -8,6 +8,10 @@
       <p class="lead" itemprop="description"><i>{{ . }}</i></p>
     {{ end -}}
   </header>
+  {{ if .Params.toc }}
+  <p class="toc-title" itemprop="tableOfContents"><strong>Table of Contents</strong></p>
+    {{ .TableOfContents }}
+  {{ end }}
   <section class="page-content" itemprop="mainContentOfPage">
     {{ .Content -}}
   </section>
