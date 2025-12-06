@@ -173,6 +173,9 @@ footer p {
 
 .post-metadata {
   margin-bottom: 1.67rem;
+}
+
+.post-date {
   color: color-mix(in srgb, currentColor 60%, transparent);
 }
 

@@ -1,79 +1,81 @@
 {{ define "main" }}
+
+<header class="post-header">
+  <h1 itemprop="headline">{{ .Title }}</h1>
+  <section class="post-metadata">
+    {{- $published := .Date }}
+    {{- $updated := .Lastmod }}
+    <p class="post-date">
+      Published:
+      <time datetime="{{ $published.Format "2006-01-02T15:04:05Z07:00" }}"
+	    itemprop="datePublished">
+	{{- $published.Format "2006-01-02" -}}
+      </time>
+    </p>
+    {{- if ne ($updated.Format "2006-01-02") ($published.Format "2006-01-02") }}
+    <p class="post-date">
+      Revised:
+      <time datetime="{{ $updated.Format "2006-01-02T15:04:05Z07:00" }}"
+	    itemprop="dateModified">
+	{{- $updated.Format "2006-01-02" -}}
+      </time>
+    </p>
+    {{- end }}
+    {{- with .Params.description }}
+    <p class="lead" itemprop="description"><em>{{ . -}}</em></p>
+    {{- end -}}
+  </section>
+</header>
+{{ if .Params.toc }}
+<p class="toc-title" itemprop="tableOfContents"><strong>Table of Contents</strong></p>
+{{ .TableOfContents }}
+{{ end }}
 <article
   itemscope
   itemtype="https://schema.org/Article"
   class="post-article">
-  <header class="post-header">
-    <h1 itemprop="headline">{{ .Title }}</h1>
-    <section class="post-metadata">
-      {{- $published := .Date }}
-      {{- $updated := .Lastmod }}
-      <span class="post-date">
-	Published:
-	<time datetime="{{ $published.Format "2006-01-02T15:04:05Z07:00" }}"
-	      itemprop="datePublished">
-	  {{- $published.Format "2006-01-02" -}}
-	</time>
-      </span>
-      {{- if ne ($updated.Format "2006-01-02") ($published.Format "2006-01-02") }}
-      <span class="post-date">
-	Revised:
-	<time datetime="{{ $updated.Format "2006-01-02T15:04:05Z07:00" }}"
-	      itemprop="dateModified">
-	  {{- $updated.Format "2006-01-02" -}}
-	</time>
-      </span>
-      {{- end }}
-    </section>
-    {{- with .Params.description }}
-    <p class="lead" itemprop="description"><em>{{ . -}}</em></p>
-    {{- end -}}
-  </header>
-  {{ if .Params.toc }}
-    <p class="toc-title" itemprop="tableOfContents"><strong>Table of Contents</strong></p>
-    {{ .TableOfContents }}
-  {{ end }}
   <section class="post-content" itemprop="articleBody">
     {{ .Content }}
   </section>
-  {{- with .GetTerms "tags" }}
-  <section class ="post-metadata">
+</article>
+{{- with .GetTerms "tags" }}
+<section class ="post-metadata">
   <ul class="post-tags" aria-label="Tags">
     {{- range $i, $t := . }}
     <li><a itemprop="keywords" href="{{ $t.RelPermalink }}">#{{ $t.Page.Title }}</a></li>
     {{- if $i }} {{ end }}
     {{- end }}
   </ul>
-  </section>
-  {{- end }}
-  {{- $related := site.RegularPages.Related . | first 5 }}
-  {{ with $related -}}
-  <section class="post-related">
-    <h2>Related Posts</h2>
-    <ul>
-      {{ range . -}}
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-      {{ end -}}
-    </ul>
-  </section>
-  {{- end }}
-</article>
+</section>
+{{- end }}
+{{- $related := site.RegularPages.Related . | first 5 }}
+{{ with $related -}}
+<section class="post-related">
+  <h2>Related Posts</h2>
+  <ul>
+    {{ range . -}}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end -}}
+  </ul>
+</section>
+{{- end }}
+
 <!-- Previous / Next Navigation -->
 {{- if or .PrevInSection .NextInSection -}}
 <nav class="post-nav"
      aria-label="Post navigation">
   <ul class="post-nav">
-	{{ with .PrevInSection -}}
-	<li>
-	  <a class="post-nav-prev" href="{{ .RelPermalink }}">&lt;&lt; Previous
-      Post</a>
-	</li>
-	{{- end }}
-	{{ with .NextInSection -}}
-	<li>
-	  <a class="post-nav-next" href="{{ .RelPermalink }}">Next Post &gt;&gt;</a>
-	</li>
-	{{ end -}}
+    {{ with .PrevInSection -}}
+    <li>
+      <a class="post-nav-prev" href="{{ .RelPermalink }}">&lt;&lt; Previous
+	Post</a>
+    </li>
+    {{- end }}
+    {{ with .NextInSection -}}
+    <li>
+      <a class="post-nav-next" href="{{ .RelPermalink }}">Next Post &gt;&gt;</a>
+    </li>
+    {{ end -}}
   </ul>
 </nav>
 {{ end -}}
