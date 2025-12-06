@@ -18,10 +18,10 @@ Simply run =hugo= from the root dir, and serve =/public= on a web server.
 + Previous theme :: was [[https://github.com/imgios/not-much][=not-much= theme]] by Giosuè Sulipano. Nothing against it,
   just wanted my own :)
 * LICENSE
-+ Original content (LICENSE.CC-BY-SA-4.0) :: All original content, prose, posts, images,
++ Original content (LICENSE.content) :: All original content, prose, posts, images,
   and other non-code related works are published under the [[https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt][Creative Commons
   Attribution-ShareAlike 4.0 International]].
-+ Original code (LICENSE.GPL-3.0) :: Any original code such as scripts,
++ Original code (LICENSE.code) :: Any original code such as scripts,
   utilities, examples, other program files, and their associated documentation,
   is published under the [[https://www.gnu.org/licenses/gpl-3.0.txt][GNU General Public License v3.0]].
 + Theme code (LICENSE.sk2) :: This website is built with Hugo on top of the [[https://github.com/J-Siu/hugo-theme-sk2][SK2
