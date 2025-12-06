@@ -83,7 +83,8 @@ tag      = "tags"
 	backlinkHTML = "<<"
 
 [author]
-  name = "Sam Smith"
+  name = "Samuel Smith"
+  email = "sam@playleft.com"
 
 [Params]
 mainSections = "post"
@@ -93,5 +94,5 @@ toc          = true
 
 [markup.tableOfContents]
 endLevel   = 6
-ordered    = false
-startLevel = 1
+ordered    = true
+startLevel = 2
