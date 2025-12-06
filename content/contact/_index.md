@@ -1,9 +1,12 @@
 +++
-title = 'Contact'
-date = 2024-12-16T11:30:04+01:00
-draft = false
+title = "Contact"
+date = 2025-11-27T11:30:04
+description = "Get in touch with me."
+layout = "single"
 +++
-# Contact
 
-- 📬 sam [at] playleft.com
-- [github](https://github.com/s6muel)
+Email is the best way to get in touch. If you prefer something more personal, feel free to arrange a time with me using Jitsi or a similar service. I'm always happy to have a yarn!
+
+- **Email ::** sam [at] `playleft.com`
+
+- **GitHub ::** [s6muel](https://github.com/s6muel)

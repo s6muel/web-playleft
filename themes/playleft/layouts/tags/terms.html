@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="taxonomy-list">
+  {{- with .Title }}
+  <h1>{{ . }}</h1>
+  {{- end -}}
+  {{- with .Params.description -}}
+  <p class="lead" itemprop="description"><i>{{ . }}</i></p>
+  {{- end -}}
+  {{- with .Content }}
+  <article class="taxonomy-description">
+    {{ . }}
+  </article>
+  {{- end }}
+  <ul class="taxonomy-terms">
+    {{- range .Data.Terms.Alphabetical }}
+    <li class="card" itemscope itemtype="https://schema.org/CollectionPage">
+      <a href="{{ .Page.RelPermalink }}" itemprop="url">
+        <span itemprop="name">{{ .Page.Title }}</span>
+      </a>
+      <span class="taxonomy-count">({{ .Count }})</span>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}

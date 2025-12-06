@@ -1,0 +1,32 @@
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{{relLangURL ""}}css/stylesheet.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+{{- /* Determine description with special homepage logic */ -}}
+{{- $description := "" -}}
+{{ if .IsHome }}
+  {{- /* Homepage: always use site description */ -}}
+  {{ with site.Params.description }}
+    {{- $description = . -}}
+  {{ end -}}
+{{ else }}
+  {{- /* Non-homepage: use page description → site description fallback */ -}}
+  {{ with .Description }}
+    {{- $description = . -}}
+  {{ end -}}
+  {{ if not $description }}
+    {{ with site.Params.description }}
+      {{- $description = . -}}
+    {{- end }}
+  {{- end -}}
+{{ end -}}
+{{- if $description }}
+  <meta name="description" content="{{ $description | plainify | htmlEscape }}">
+  <meta property="og:description" content="{{ $description | plainify | htmlEscape }}">
+  {{- end }}
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <title>{{ site.Title }} :: {{ page.Title }}</title>
+</head>

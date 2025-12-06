@@ -1,8 +1,5 @@
 +++
-title = 'Posts'
-date = 2024-12-16T11:30:04+01:00
-draft = false
+aliases = ["posts", "articles", "blog", "writings"]
+title = "Posts"
+description = "My latest writings, tidbits, and other stuff."
 +++
-
-# Latest posts
-</br>

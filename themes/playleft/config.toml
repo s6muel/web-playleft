@@ -1,10 +1,8 @@
 DefaultContentLanguage = "en"
 baseURL                = "https://playleft.com"
-# copyright              = "Copyright {year} Samuel Smith."
 enableInlineShortcodes = true
 languageCode           = "en-AU"
 title                  = "Playleft"
-theme                  = "playleft"
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
 ignoreErrors = ["error-remote-getjson"]
@@ -15,34 +13,28 @@ pagerSize = 6
 [menu]
 
 	[[menu.main]]
-	identifier = "home"
-	name       = "Home"
-	url        = "/"
-	weight     = 10
-
-	[[menu.main]]
 	identifier = "about"
 	name       = "About"
 	url        = "/about/"
-	weight     = 20
+	weight     = 10
 
 	[[menu.main]]
 	identifier = "posts"
 	name 	   = "Posts"
 	url	   = "/posts/"
-	weight	   = 30
+	weight	   = 20
 
 	[[menu.main]]
 	identifier = "tags"
 	name 	   = "Tags"
 	url	   = "/tags/"
-	weight	   = 40
+	weight	   = 30
 
 	[[menu.main]]
 	identifier = "contact"
 	name 	   = "Contact"
 	url	   = "/contact/"
-	weight	   = 100
+	weight	   = 40
 
 [taxonomies]
 category = "categories"
@@ -79,14 +71,10 @@ tag      = "tags"
 [markup]
 	[markup.goldmark.renderer]
 	unsafe = true
-	[markup.goldmark.extensions.footnote]
-	backlinkHTML = "<<"
 
-[author]
-  name = "Samuel Smith"
-  email = "sam@playleft.com"
-
-[Params]
+[params]
+author	     = "Samuel Smith"
+description  = "The personal website of Samuel Smith."
 mainSections = "post"
 startdate    = "2025-05-12"
 summary      = true
@@ -94,5 +82,5 @@ toc          = true
 
 [markup.tableOfContents]
 endLevel   = 6
-ordered    = true
-startLevel = 2
+ordered    = false
+startLevel = 1

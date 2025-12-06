@@ -1,0 +1,65 @@
+{{ define "main" }}
+<article class="list-intro">
+  <!-- _index.md -->
+  {{- if not .IsHome -}}
+  <header class="page-header">
+    <h1 itemprop="headline">{{ .Title }}</h1>
+    {{- with .Params.description }}
+    <p class="lead" itemprop="description"><i>{{ . }}</i></p>
+    {{ end }}
+  </header>
+  {{ with .Content }}
+  {{ . }}
+</article>
+{{- end -}}
+{{- end -}}
+
+<!-- $paginator -->
+{{- $p := .Pages -}}
+{{ if .IsHome }}
+{{- $p = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ else if eq .Kind "taxonomy" }}
+{{- $p = $p.ByTitle }}
+{{- end -}}
+{{ $paginator := .Paginate $p }}
+<!-- list -->
+<section class="post-list" aria-label="Posts">
+  {{- range $paginator.Pages }}
+  <article class="card" itemscope itemtype="https://schema.org/Article">
+    <header>
+      <h2 class="post-title" itemprop="headline">
+        <a href="{{ .RelPermalink }}" itemprop="url">
+          {{ .Title }}
+        </a>
+      </h2>
+      {{- $published := .Date }}
+      {{- $updated := .Lastmod }}
+      <span class="post-date">
+		Published:
+		<time datetime="{{ $published.Format "2006-01-02" }}"
+			  itemprop="datePublished">
+		  {{- $published.Format "2006-01-02" }}
+		</time>
+      </span>
+      {{- if ne ($updated.Format "2006-01-02") ($published.Format "2006-01-02") }}
+      <span class="post-date">
+		Revised:
+		<time datetime="{{ $updated.Format "2006-01-02" }}"
+			  itemprop="dateModified">
+		  {{- $updated.Format "2006-01-02" }}
+		</time>
+      </span>
+      {{- end }}
+      <p itemprop="description">
+		{{ .Summary }}
+      </p>
+	  <a href="{{ .RelPermalink }}">Read More >></a>
+    </header>
+  </article>
+  {{ end }}
+</section>
+<!-- pagination -->
+<nav class="pagination" aria-label="Pagination">
+  {{- template "_internal/pagination.html" . -}}
+</nav>
+{{- end -}}

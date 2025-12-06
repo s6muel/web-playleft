@@ -1,0 +1,11 @@
+
+<footer>
+  {{- $now := now.Format "2006" -}}
+    {{- with site.Params.startdate -}}
+      {{- $start := dateFormat "2006" . -}}
+      <p><small>{{ printf "Copyright (c) %s %s." (cond (eq $start $now) $now (printf "%s–%s" $start $now)) site.Params.author }} All original content is published under the CC BY-SA 4.0 or GPL-3.0 licenses. For more information, please see the <a href="/license">license</a>. Here's some <a href="/terms">terms</a>.</small></p>
+    {{- else -}}
+      <p><small>{{ printf "Copyright (c) %s %s." $now site.Params.author }} All original content is published under CC BY-SA 4.0 or GPL-3.0. For more information, please see the <a href="/license">license</a>. Here's some <a href="/terms">terms</a>.</small></p>
+    {{- end -}}
+  <a href="#top"><small>Back to top (weee)</small></a>
+</footer>
