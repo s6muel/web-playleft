@@ -157,7 +157,7 @@ pre {
   white-space: pre;
 }
 
-p code, ul code {
+p code, ul code, ol code {
   font-weight: bold;
 }
 
